@@ -15,6 +15,10 @@ let user = document.getElementById('tu')
 let npc = document.getElementById('npc')
 let winner = document.getElementById('winner')
 let emailTrovata = 0
+let gameWinUser = 0 
+let gameWinNpc = 0
+let outputGameUser = document.getElementById('gameUser')
+let outputGameNpc = document.getElementById('gameNpc')
 
 for(let i = 0; i < listEmail.length; i++){
     
@@ -38,6 +42,7 @@ if(emailTrovata === 1){
     <br>
     Riaggiorna la pagina
     `;
+    btn.remove()
 }
 btn.addEventListener('click', function(){
     let userNumber =  Math.floor(Math.random( ) * 7) 
@@ -45,12 +50,21 @@ btn.addEventListener('click', function(){
     user.innerHTML = userNumber
     npc.innerHTML = npcNumber
 
+
+
     if(userNumber > npcNumber){
-        winner.innerHTML = `TU HAI VINTO!`
+        winner.innerHTML = `TU HAI VINTO!`;
+        gameWinUser++;
+        outputGameUser.innerHTML = gameWinUser; 
+    }else if(userNumber === npcNumber){
+        winner.innerHTML = `AVETE PAREGGIATO!` 
     }else{
         winner.innerHTML = `NPC HA VINTO!`
- 
+        gameWinNpc++;  
+        outputGameNpc.innerHTML = gameWinNpc; 
     }
 }) 
+
+
 
 
