@@ -1,5 +1,4 @@
-const inputEmail = prompt('Inserisci la tua email')
-console.log(inputEmail)
+const inputEmail = prompt('Per acceder al gioco inserisci la tua email')
 
 const listEmail = [
     'davide@gmail.com',
@@ -11,20 +10,36 @@ const listEmail = [
 
 
 
-
 for(let i = 0; i < listEmail.length; i++){
     
     const error = document.getElementById('outputError');
-
-
-
+    const confirm = document.getElementById('outputConfirm')
+    let user = document.getElementById('tu')
+    let npc = document.getElementById('npc')
+    
     if(inputEmail === listEmail[i]){
-        console.log(inputEmail)
 
-    }else if(inputEmail != listEmail[i]){
-        console.log(inputEmail)
+        confirm.innerHTML = `
+        Hai accesso al gioco 
+        <br>
+        Buon divertimento!
+        `;
+
+        error.remove()
+
+        user.innerHTML = Math.floor(Math.random( ) * 7 )
+        npc.innerHTML = Math.floor(Math.random( ) * 7 )
+        
+
+    }else{
         error.innerHTML = `
-        L'email che hai inserito non esiste nel nostro database`
+        L'email che hai inserito non esiste nel nostro database <br>
+        Non hai accesso al gioco
+        <br>
+        Riaggiorna la pagina
+        `;
+
+        confirm.remove()
     }
 
 }
