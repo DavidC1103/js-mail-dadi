@@ -8,14 +8,24 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <main class="text-center">
-        <h1 class="text-center text-danger my-5" id="outputError"></h1>
+<body class="bg-danger">
+    <main class="text-center text-white">
+        <h1 class="text-center text-warning my-5" id="outputError"></h1>
         <h1 class="text-center text-success my-5" id="outputConfirm"></h1>
         <div class="row mt-5">
-            <div class="col-6 text-center fs-2" id="tu"></div>
+            <div class="col-4">
+                <div class="fs-1">TU</div>
+                <div class=" text-center fs-1" id="tu""></div>
+            </div>
+            <div id="winner" class=" col-4 text-center fs-1 text-primary"></div>
+            <div class="col-4">
+                <div class="fs-1">NPC</div>
+                <div class="text-center fs-1" id="npc"></div>
+            </div>
+        </div>
 
-        <div class="col-6 text-center fs-2" id="npc"></div>
+        <button type="button" id="btn" class="btn btn-warning btn-lg mt-5">Tira i dadi</button>
+
 
     </main>
     <script src="js/script.js"></script>
