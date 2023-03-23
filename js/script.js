@@ -42,7 +42,7 @@ if(emailTrovata === 1){
     <br>
     Riaggiorna la pagina
     `;
-    btn.remove()
+    btn.classList.add('disabled')
 }
 btn.addEventListener('click', function(){
     let userNumber =  Math.floor(Math.random( ) * 7) 
