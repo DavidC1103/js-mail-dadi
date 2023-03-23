@@ -8,7 +8,6 @@ const listEmail = [
     'ciccio@gmail.com'
 ]
 
-
 const error = document.getElementById('outputError');
 const confirm = document.getElementById('outputConfirm')
 const btn = document.getElementById('btn')
@@ -30,17 +29,8 @@ if(emailTrovata === 1){
     Hai accesso al gioco 
     <br>
     Buon divertimento!
-    `;
-    
-    user.innerHTML = Math.floor(Math.random( ) * 7 )
-    npc.innerHTML = Math.floor(Math.random( ) * 7 )
-
-    if(user > npc){
-        winner.innerHTML = `TU HAI VINTO!`
-    }else{
-        winner.innerHTML = `NPC HA VINTO!`
-
-    }
+    `;  
+  
 }else{
     error.innerHTML = `
     L'email che hai inserito non esiste nel nostro database <br>
@@ -49,4 +39,18 @@ if(emailTrovata === 1){
     Riaggiorna la pagina
     `;
 }
+btn.addEventListener('click', function(){
+    let userNumber =  Math.floor(Math.random( ) * 7) 
+    let npcNumber = Math.floor(Math.random( ) * 7) 
+    user.innerHTML = userNumber
+    npc.innerHTML = npcNumber
+
+    if(userNumber > npcNumber){
+        winner.innerHTML = `TU HAI VINTO!`
+    }else{
+        winner.innerHTML = `NPC HA VINTO!`
+ 
+    }
+}) 
+
 
